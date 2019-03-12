@@ -1,14 +1,25 @@
+/**
+ * Created by ghy on 2019/3/12.
+ */
+
+const window = require('./window/window');
+const navigator = require('./window/navigator');
 const CreateData = require('../lib/CreateData');
 const Util = require('../lib/Util');
 const SecateUtil = require('../lib/SecateUtil');
 const DocumentUtil = require('../lib/DocumentUtil');
-var GHY_FINNAL_DATA = new CreateData([2, 2, 4, 4, 4, 1, 1, 4, 4, 3, 2, 2, 2, 2, 2, 1, 2, 1])
+const IsgDeviceUtil = require('./IsgDeviceUtil');
+const PlantFormUtil = require('./PlantFormUtil');
 
-var f = 0;
+const GHY_FINNAL_DATA = new CreateData([2, 2, 4, 4, 4, 1, 1, 4, 4, 3, 2, 2, 2, 2, 2, 1, 2, 1])
+const f = 0;
+
 function getRandom() {
     return Util.a() / 1e3 >>> 0
 }
-
+function e() {
+    Util.d(window.location.href, "#")
+}
 
 function count_sign(t, i) {
     var u;
@@ -35,7 +46,8 @@ function count_sign(t, i) {
     GHY_FINNAL_DATA[9] = DocumentUtil.q(), GHY_FINNAL_DATA[10] = DocumentUtil.r(), GHY_FINNAL_DATA[11] = DocumentUtil.s(), GHY_FINNAL_DATA[12] = DocumentUtil.t();
     var a = DocumentUtil.x();
     GHY_FINNAL_DATA[13] = a.u, GHY_FINNAL_DATA[14] = a.v;
-    var v = DocumentUtil.z(), l = DocumentUtil.B(), d = DocumentUtil.A(), h = [u, DocumentUtil.y(), t, v, a.w, false, d, l];
+    var v = DocumentUtil.z(), l = DocumentUtil.B(), d = DocumentUtil.A(),
+        h = [u, DocumentUtil.y(), t, v, a.w, false, d, l];
 
     console.log('hhhhhhhhhhh', h)
     if (GHY_FINNAL_DATA[15] = Util.i(h), t) {
@@ -63,17 +75,29 @@ function count_sign(t, i) {
 
     console.log("return g:", t, JSON.stringify(p), i, g)
     return g
+};
+
+function sign_full(t) {
+    if (DocumentUtil.p(), IsgDeviceUtil.p(), t) {
+        var r = s.O(t);
+        r && GHY_FINNAL_DATA.M(r)
+    }
+    let my_now = Util.a();
+    console.log("==============my now", my_now)
+    GHY_FINNAL_DATA[1] = my_now;
+
+    GHY_FINNAL_DATA[5] = IsgDeviceUtil.D();
+    GHY_FINNAL_DATA[6] = PlantFormUtil.P(), e();
+    GHY_FINNAL_DATA[8] = Util.b(navigator.userAgent);
+    GHY_FINNAL_DATA[16] = IsgDeviceUtil.C();
+    GHY_FINNAL_DATA[17] = IsgDeviceUtil.F();
+    IsgDeviceUtil.H(function (n) {
+        GHY_FINNAL_DATA[7] = n
+    })
 }
-
-
-count_sign(false, null);
-
-// function ghy_set_isg_cookie() {
-// }
-//
-// function ghy_fun_n() {
-//
-// }
-// function ghy_fun_s() {
-//
-// }
+const IsgUtil = {
+    p: sign_full,
+    Q: count_sign,
+}
+// IsgUtil.Q(false, null);
+module.exports = IsgUtil;
