@@ -20,7 +20,7 @@ function e(n) {
 
 function i(n) {
     for (var t = [], r = 0; r < n.length; r += 4) {
-        var e = s[n.charAt(r)] << 18 | s[n.charAt(r + 1)] << 12 | s[n.charAt(r + 2)] << 6 | s[n.charAt(r + 3)];
+        var e = ghy_array_var_s[n.charAt(r)] << 18 | ghy_array_var_s[n.charAt(r + 1)] << 12 | ghy_array_var_s[n.charAt(r + 2)] << 6 | ghy_array_var_s[n.charAt(r + 3)];
         t.push(e >> 16, e >> 8 & 255, 255 & e)
     }
     return t
@@ -29,7 +29,7 @@ function i(n) {
 function u() {
     for (var n = 0; n < 64; n++) {
         var t = f.charAt(n);
-        s[t] = n
+        ghy_array_var_s[t] = n
     }
 }
 
@@ -40,12 +40,13 @@ function o(n) {
 
 function c(n) {
     var e = i(n), u = e[1], o = [];
+    // console.log('最终验证',n, e, u, o);
     if (r(e, 2, o, 0, u), t(o) == u)return o
 }
 
 var a = 2;
 var f = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
-var s = {};
+var ghy_array_var_s = {};
 
 const SecateUtil = {
     p: u,

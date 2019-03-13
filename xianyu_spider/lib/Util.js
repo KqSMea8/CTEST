@@ -7,7 +7,6 @@ var y = Object.getOwnPropertyDescriptor;
 var isEvent = false;
 function t() {
     let ramdom = 4294967295 * Math.random() >>> 0
-    console.log('random', ramdom)
     return ramdom;
 }
 

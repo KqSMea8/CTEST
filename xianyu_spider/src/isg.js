@@ -68,12 +68,3 @@ function count_sign(t, i) {
 
 count_sign(false, null);
 
-// function ghy_set_isg_cookie() {
-// }
-//
-// function ghy_fun_n() {
-//
-// }
-// function ghy_fun_s() {
-//
-// }

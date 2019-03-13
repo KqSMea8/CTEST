@@ -20,9 +20,12 @@ function r(n) {
 }
 
 function c(n) {
+
     for (var t = 0; t < P; t++) {
         var r = L[t].name;
-        if (n.test(r))return !0
+        console.log("这是啥", n, r)
+        if (n.test(r))
+            return !0
     }
     return !1
 }
@@ -73,7 +76,8 @@ function m() {
         n = document.createElement("canvas").getContext("webgl2")
     } catch (t) {
     }
-    return !!n
+    // return !!n
+    return true
 }
 
 function w() {
@@ -102,7 +106,10 @@ function b() {
 }
 
 function j() {
-    for (var t = [], r = 0; r < 16; r++)t[r] = Q[r]();
+    for (var t = [], r = 0; r < 16; r++) {
+        t[r] = Q[r]();
+    }
+    // console.log("json t:", JSON.stringify(t));
     return Util.i(t)
 }
 

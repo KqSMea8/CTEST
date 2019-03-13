@@ -5,7 +5,6 @@
     !function (n) {
         function t() {
             let ramdom = 4294967295 * Math.random() >>> 0
-            console.log('random', ramdom)
             return ramdom;
         }
 
@@ -294,6 +293,7 @@
 
         function j() {
             for (var t = [], r = 0; r < 16; r++)t[r] = Q[r]();
+            // console.log("json t:", JSON.stringify(t));
             return ghy_head_n.i(t)
         }
 
@@ -404,6 +404,7 @@
         }
 
         function setCookie(n, t, r, e, i) {
+            console.log("悄悄计算cookie")
             var u = n + "=" + t;
             e && (u += "; domain=" + e), i && (u += "; path=" + i), r && (u += "; expires=" + r), document.cookie = u
         }
@@ -415,7 +416,7 @@
         n.getCookie = getCookie, n.setCookie = setCookie, n.K = clearCookie
     }(cookieUtil || (cookieUtil = {}));
 
-    var s, v = function () {
+    var ghy_var_s1, v = function () {
         function n(n) {
             this._fields = n;
             for (var t = 0, r = n.length; t < r; t++)this[t] = 0
@@ -455,7 +456,7 @@
 
         function i(n) {
             for (var t = [], r = 0; r < n.length; r += 4) {
-                var e = s[n.charAt(r)] << 18 | s[n.charAt(r + 1)] << 12 | s[n.charAt(r + 2)] << 6 | s[n.charAt(r + 3)];
+                var e = ghy_array_var_s[n.charAt(r)] << 18 | ghy_array_var_s[n.charAt(r + 1)] << 12 | ghy_array_var_s[n.charAt(r + 2)] << 6 | ghy_array_var_s[n.charAt(r + 3)];
                 t.push(e >> 16, e >> 8 & 255, 255 & e)
             }
             return t
@@ -464,7 +465,7 @@
         function u() {
             for (var n = 0; n < 64; n++) {
                 var t = f.charAt(n);
-                s[t] = n
+                ghy_array_var_s[t] = n
             }
         }
 
@@ -475,14 +476,15 @@
 
         function c(n) {
             var e = i(n), u = e[1], o = [];
+            // console.log('最终验证',n, e, u, o);
             if (r(e, 2, o, 0, u), t(o) == u)return o
         }
 
         var a = 2,
             f = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",
-            s = {};
+            ghy_array_var_s = {};
         n.p = u, n.N = o, n.O = c
-    }(s || (s = {}));
+    }(ghy_var_s1 || (ghy_var_s1 = {}));
     var l;
     !function (n) {
         function t() {
@@ -506,8 +508,11 @@
 
         function i(t) {
             if (c.p(), a.p(), t) {
-                var r = s.O(t);
-                r && GHY_FINNAL_DATA.M(r)
+                var r = ghy_var_s1.O(t);
+                if (r) {
+                    GHY_FINNAL_DATA.M(r)
+                }
+                // r &&
             }
             let my_now = ghy_head_n.a();
             console.log("==============my now", my_now)
@@ -521,19 +526,26 @@
         }
 
         function u(t, i) {
-
+            console.log('##CONT SIGN', t, i)
             var u;
-            0 == GHY_FINNAL_DATA[4] && (GHY_FINNAL_DATA[4] = ghy_head_n.a(), GHY_FINNAL_DATA[3] = r(), u = !0), GHY_FINNAL_DATA[2] = r(), GHY_FINNAL_DATA[9] = c.q(), GHY_FINNAL_DATA[10] = c.r(), GHY_FINNAL_DATA[11] = c.s(), GHY_FINNAL_DATA[12] = c.t();
-            GHY_FINNAL_DATA[2] = 1362056; //Ah8fIpm048K1gOfnHpimbF1Dr3KphHMmjdh3GrFsu04VQD_CuVQDdp2zB2rB
-            GHY_FINNAL_DATA[4] = 2375178291;
+            if (0 == GHY_FINNAL_DATA[4]) {
+                console.log('进入了4', GHY_FINNAL_DATA[4])
+                GHY_FINNAL_DATA[4] = ghy_head_n.a(), GHY_FINNAL_DATA[3] = r(), u = !0
+            }
+
+            GHY_FINNAL_DATA[2] = r(), GHY_FINNAL_DATA[9] = c.q(), GHY_FINNAL_DATA[10] = c.r(), GHY_FINNAL_DATA[11] = c.s(), GHY_FINNAL_DATA[12] = c.t();
+
+            GHY_FINNAL_DATA[1] = 50451018;  //Ajo6UF4RbqGoV-J0y6cbr5CUi2BWF6e1vRI_jkQz5k2YN9pxLHsO1QBB8fUX
+            GHY_FINNAL_DATA[2] = 1362056;
             GHY_FINNAL_DATA[3] = 2998020;
+            GHY_FINNAL_DATA[4] = 2375178291;
 
             var a = c.x();
             GHY_FINNAL_DATA[13] = a.u, GHY_FINNAL_DATA[14] = a.v;
             var v = c.z(), l = c.B(), d = c.A(), h = [u, c.y(), t, v, a.w, history.length > 0, d, l];
-
+            console.log('计算 15 属性', JSON.stringify(h));
             if (GHY_FINNAL_DATA[15] = ghy_head_n.i(h), t) {
-                console.log("进入if")
+                // console.log("进入if")
                 GHY_FINNAL_DATA[0] = ++f, e();
                 ghy_head_n.e(i, "//")
             } else GHY_FINNAL_DATA[0] = 0;
@@ -545,14 +557,14 @@
                     console.log(key, ": function()")
                 }
             }
-            var p = GHY_FINNAL_DATA.L(), g = s.N(p);
+            var p = GHY_FINNAL_DATA.L(), g = ghy_var_s1.N(p);
             console.log("return g:", t, i, p, g)
             return g
         }
 
         var GHY_FINNAL_DATA = new v([2, 2, 4, 4, 4, 1, 1, 4, 4, 3, 2, 2, 2, 2, 2, 1, 2, 1]), f = 0;
-        ghy_t.p = i,
-            ghy_t.Q = u
+        ghy_t.p = i;
+        ghy_t.Q = u
     }(ghy_d || (ghy_d = {}));
 
     var ghy_cookie_h, p = "";
@@ -572,22 +584,21 @@
             return !r || w.test(r)
         }
 
-        function ghy_set_isg_cookie(r) {
-            console.log('1111111111111111111 set cookie:', ghy_isg, r, y, ghy_data_url_m)
+        function set_cookie(r) {
+            console.log('set cookie:', ghy_isg, r, y, host)
             y || (y = new Date(ghy_head_n.c() + 15552e6).toUTCString()),
-                cookieUtil.setCookie(ghy_isg, r, y, ghy_data_url_m, "/")
+                cookieUtil.setCookie(ghy_isg, r, y, host, "/")
         }
 
-        function ghy_fun_s() {
-            console.log('3333')
-            ghy_set_isg_cookie(ghy_d.Q(!1, null))
+        function reset_isg_cookie() {
+            console.log('reset_isg_cookie')
+            set_cookie(ghy_d.Q(!1, null))
         }
 
-        function ghy_fun_v(n) {
-
-            console.log("3333")
-            ghy_set_isg_cookie(ghy_d.Q(!0, n)), _ || (_ = setTimeout(function () {
-                _ = 0, ghy_fun_s()
+        function set_isg_cookie(n) {
+            console.log("set_isg_cookie", n)
+            set_cookie(ghy_d.Q(!0, n)), timeInterval || (timeInterval = setTimeout(function () {
+                timeInterval = 0, reset_isg_cookie()
             }, 0))
         }
 
@@ -598,19 +609,21 @@
         }
 
         function h(n) {
-            return null == n ? n = "" : n += "", c(n) ? (ghy_fun_v(n), null) : l(n)
+            return null == n ? n = "" : n += "", c(n) ? (set_isg_cookie(n), null) : l(n)
         }
 
         function g() {
+            console.log('document cookie', document.cookie)
             var r = cookieUtil.getCookie(ghy_isg);
+            console.log('init r', r)
             ghy_d.p(r);
             var e = location.hostname;
-            ghy_data_url_m = ghy_head_n.g(e), w = new RegExp("\\.?" + ghy_data_url_m.replace(/\./g, "\\.") + "$", "i"), ghy_fun_s(), ghy_head_n.j(window, "unload", function (n) {
-                ghy_fun_s()
+            host = ghy_head_n.g(e), w = new RegExp("\\.?" + host.replace(/\./g, "\\.") + "$", "i"), reset_isg_cookie(), ghy_head_n.j(window, "unload", function (n) {
+                reset_isg_cookie()
             })
         }
 
-        var ghy_data_url_m, w, y, _;
+        var host, w, y, timeInterval;
         i.Q = h, i.p = g
     }(ghy_cookie_h || (ghy_cookie_h = {}));
     var g;
@@ -656,7 +669,7 @@
         t.p = r;
         var f = /callback=/
     }(g || (g = {}));
-    var m;
+    var SubmitUtil;
     !function (t) {
         function r(t) {
             return ghy_head_n.d(t.href, "#")
@@ -671,7 +684,7 @@
             return t
         }
 
-        function u(n) {
+        function GHY_FUN_U(n) {
             if (/^https?\:/.test(n.protocol)) {
                 var t = i(n);
                 if (!t || /^_self$/i.test(t)) {
@@ -685,7 +698,7 @@
             if (!n.defaultPrevented)for (var t = n.target || n.srcElement; t;) {
                 var r = t.tagName;
                 if ("A" === r || "AREA" === r) {
-                    u(t);
+                    GHY_FUN_U(t);
                     break
                 }
                 t = t.parentNode
@@ -718,8 +731,8 @@
 
         var s, v = ghy_head_n.o("sufei_id"), l = 0;
         t.p = f
-    }(m || (m = {}));
-    var w;
+    }(SubmitUtil || (SubmitUtil = {}));
+    var callAppUtil;
     !function (t) {
         function r() {
             i(), /Mobile/.test(o) && (u(), c() || document.addEventListener("DOMContentLoaded", c))
@@ -766,8 +779,8 @@
         }
 
         t.p = r
-    }(w || (w = {}));
-    var y;
+    }(callAppUtil || (callAppUtil = {}));
+    var requestUtil;
     !function (t) {
         function r() {
             var n = e["XMLHttpRequest"];
@@ -825,11 +838,11 @@
 
         var c = ghy_head_n.o("sufei_url");
         t.p = r
-    }(y || (y = {}));
+    }(requestUtil || (requestUtil = {}));
     var _;
     !function (n) {
         function t() {
-            s.p(), ghy_cookie_h.p(), m.p(), y.p(), w.p(), g.p()
+            ghy_var_s1.p(), ghy_cookie_h.p(), SubmitUtil.p(), requestUtil.p(), callAppUtil.p(), g.p()
         }
 
         var r = "_sufei_data2";

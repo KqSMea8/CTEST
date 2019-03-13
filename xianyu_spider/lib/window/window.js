@@ -4,6 +4,8 @@
 module.exports = {
     location: {
         href: "http://www.taobao.com",
-        hostname:"taobao.com"
-    }
+        hostname: "taobao.com"
+    },
+    localStorage: {},
+    outerWidth: 375
 };

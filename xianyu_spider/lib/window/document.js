@@ -6,7 +6,17 @@ const Document = {
         return [{style: {}}];
     },
     documentElement: {
-        clientWidth: 750
+        clientWidth: 375
+    },
+    addEventListener: function () {
+
+    },
+    cookie: "",
+    body: {
+        clientWidth: 375
+    },
+    ontouchstart: function () {
+
     }
 }
 module.exports = Document;

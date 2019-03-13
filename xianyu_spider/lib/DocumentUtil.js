@@ -71,7 +71,7 @@ function p() {
 
 function g() {
     // return !document.hidden //todo 默认值
-    return false;
+    return true;
 }
 
 function m() {
@@ -87,7 +87,7 @@ function y() {
 }
 
 
-var _, k, A = 0, b = 0, j = 0, M = 0, T = 0, E = 0, x = !0, C = !0;
+var _ = true, k, A = 0, b = 0, j = 0, M = 0, T = 0, E = 0, x = !0, C = !0;
 
 const DocumentUtil = {
     p: bindEvent,
