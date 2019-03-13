@@ -28,4 +28,4 @@ class FormData {
     }
 
 }
-module.exports = FormData;
+module.exports = new FormData();

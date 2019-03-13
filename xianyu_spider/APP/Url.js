@@ -3,7 +3,7 @@
  */
 class Query {
     constructor() {
-        this.url = 'https://h5api.m.taobao.com/h5/mtop.taobao.idle.house.search/1.0/';
+        this.URL_API = 'https://h5api.m.taobao.com/h5/mtop.taobao.idle.house.search/1.0/';
         this.query = {
             jsv: "2.4.9",
             appKey: 12574478,
@@ -27,12 +27,17 @@ class Query {
         }
     }
 
-    getUrl() {
+    getUrl(sign) {
+        if (sign) {
+            this.setQuery('sign', sign);
+        } else {
+        }
         let array = [];
         for (var key in this.query) {
             array.push(key + "=" + this.query[key])
         }
-        let url = `${host}?${array.join('&')}`
+        let url = `${this.URL_API}?${array.join('&')}`;
+        return url;
     }
 
     getQuery(key) {
@@ -48,4 +53,7 @@ class Query {
         return str;
     }
 }
+
+let myurl = new Query();
+console.log(myurl.getUrl());
 module.exports = new Query();

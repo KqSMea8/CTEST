@@ -431,7 +431,7 @@
                 do {
                     o = (o << 8) + n[r++]
                 } while (--u > 0);
-                console.log("执行 M 函数", e, o >>> 0)
+                // console.log("执行 M 函数", e, o >>> 0)
                 this[e] = o >>> 0
             }
         }, n

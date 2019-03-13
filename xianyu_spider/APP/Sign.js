@@ -218,4 +218,21 @@ function md5(string) {
     return temp.toLowerCase();
 }
 
-module.exports = md5;
+const Token = require('./Token');
+const FormData = require('./FormData');
+var appKey = '12574478';
+const Sign = {
+    getSign(){
+        let token = Token.getToken() || 'ca1293799f67ed0491b54312ccc7cff3';
+        let timestamp = +new Date();
+        // let timestamp = 1552495094885; // 085feaaa5bde495eb70af54283380e8e
+        let fromData = FormData.getData();
+        console.log(token, timestamp, appKey, JSON.stringify(fromData))
+        var sign = md5(token + '&' + timestamp + "&" + appKey + "&" + JSON.stringify(fromData));
+        return sign;
+    }
+}
+
+module.exports = Sign;
+
+
